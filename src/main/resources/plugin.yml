@@ -1,5 +1,5 @@
 name: EssGuard
-version: '0.3.0'
+version: '0.3.1'
 main: me.essde.essguard.EssGuard
 api-version: '1.16'
 author: Essde
