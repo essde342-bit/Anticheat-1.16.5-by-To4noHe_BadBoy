@@ -105,11 +105,10 @@ public final class EssGuard extends JavaPlugin implements Listener {
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onVelocity(PlayerVelocityEvent event) {
         Player player = event.getPlayer();
-            PlayerData pd = getData(player);
-            pd.setLastVelocityMs(System.currentTimeMillis());
-            pd.setLastVelocity(event.getVelocity());
-            addGrace(player, getConfig().getLong("safety.velocity-grace-ms", 950L));
-        }
+        PlayerData pd = getData(player);
+        pd.setLastVelocityMs(System.currentTimeMillis());
+        pd.setLastVelocity(event.getVelocity());
+        addGrace(player, getConfig().getLong("safety.velocity-grace-ms", 950L));
     }
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
