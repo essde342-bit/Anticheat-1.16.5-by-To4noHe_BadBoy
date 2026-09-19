@@ -1,0 +1,57 @@
+# EssGuard 0.3.0 - Paper 1.16.5
+# OBSERVATION ONLY: this plugin never kicks, bans, teleports, cancels movement, or cancels attacks.
+# Defaults intentionally prefer false negatives over false positives.
+
+alerts:
+  enabled: true
+  min-vl: 6.0
+  min-streak: 3
+  cooldown-ms: 3000
+  decay-per-second: 0.15
+  max-vl: 100.0
+  clean-windows-to-reset-streak: 4
+
+safety:
+  server-lag-ms: 150
+  max-sample-gap-ms: 130
+  teleport-grace-ms: 1400
+  velocity-grace-ms: 950
+  damage-grace-ms: 600
+  join-grace-ms: 2500
+  max-ping-ms-for-movement: 450
+
+checks:
+  speed:
+    enabled: true
+    window-ticks: 10
+    mild-ratio: 1.16
+    window-ratio: 1.18
+    severe-ratio: 1.38
+    strong-window-ratio: 1.30
+    min-severe-step: 0.33
+    min-mild-samples: 6
+    min-severe-samples: 3
+    base-buffer: 0.045
+  fly:
+    enabled: true
+    hover-dy: 0.017
+    hover-min-horizontal: 0.075
+    hover-ticks: 14
+    physics-residual: 0.16
+    residual-ticks: 6
+    max-natural-rise-step: 0.48
+    rise-ticks: 3
+  jesus:
+    enabled: true
+    min-horizontal: 0.075
+    max-dy: 0.025
+    surface-ticks: 14
+  hitbox:
+    enabled: true
+    base-reach: 3.18
+    hard-reach: 3.65
+    extreme-reach: 4.00
+    ping-blocks-per-ms: 0.0009
+    max-ping-allowance: 0.55
+    max-motion-allowance: 0.45
+    min-facing-dot: 0.15
