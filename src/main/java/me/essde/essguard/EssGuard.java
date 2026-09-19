@@ -104,8 +104,7 @@ public final class EssGuard extends JavaPlugin implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onVelocity(PlayerVelocityEvent event) {
-        if (event.getEntity() instanceof Player) {
-            Player player = (Player) event.getEntity();
+        Player player = event.getPlayer();
             PlayerData pd = getData(player);
             pd.setLastVelocityMs(System.currentTimeMillis());
             pd.setLastVelocity(event.getVelocity());
