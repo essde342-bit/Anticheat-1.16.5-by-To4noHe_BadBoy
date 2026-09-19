@@ -30,7 +30,7 @@ public final class ViolationManager {
 
         UUID id = player.getUniqueId();
         Map<String, Double> byCheck = getDoubleMap(violations, id);
-        double old = value(byCheck, check);
+        double old = doubleValue(byCheck, check);
         double vl = Math.min(plugin.getConfig().getDouble("alerts.max-vl", 100D), old + points);
         byCheck.put(check, vl);
 
@@ -63,7 +63,7 @@ public final class ViolationManager {
         }
 
         Map<String, Integer> clean = getIntMap(cleanWindows, id);
-        int next = Math.min(1000, value(clean, check) + 1);
+        int next = Math.min(1000, intValue(clean, check) + 1);
         clean.put(check, next);
         if (next >= plugin.getConfig().getInt("alerts.clean-windows-to-reset-streak", 4)) {
             clearStreak(player, check);
@@ -78,7 +78,7 @@ public final class ViolationManager {
 
     private int increment(Map<UUID, Map<String, Integer>> outer, UUID id, String check) {
         Map<String, Integer> map = getIntMap(outer, id);
-        int next = value(map, check) + 1;
+        int next = intValue(map, check) + 1;
         map.put(check, Math.min(1000, next));
         return next;
     }
