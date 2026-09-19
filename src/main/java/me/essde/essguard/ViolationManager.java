@@ -116,12 +116,12 @@ public final class ViolationManager {
         }
     }
 
-    private double value(Map<String, Double> map, String key) {
+    private double doubleValue(Map<String, Double> map, String key) {
         Double v = map.get(key);
         return v == null ? 0D : v;
     }
 
-    private int value(Map<String, Integer> map, String key) {
+    private int intValue(Map<String, Integer> map, String key) {
         Integer v = map.get(key);
         return v == null ? 0 : v;
     }
