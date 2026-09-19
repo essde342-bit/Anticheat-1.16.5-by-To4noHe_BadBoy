@@ -11,7 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityVelocityEvent;
+import org.bukkit.event.player.PlayerVelocityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
@@ -103,7 +103,7 @@ public final class EssGuard extends JavaPlugin implements Listener {
     }
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
-    public void onVelocity(EntityVelocityEvent event) {
+    public void onVelocity(PlayerVelocityEvent event) {
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             PlayerData pd = getData(player);
